@@ -19,22 +19,37 @@
 // Задача 2
 // Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
-Console.Write("Введите первое значение: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе значение: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третие значение: ");
-int c = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите первое значение: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите второе значение: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите третие значение: ");
+// int c = Convert.ToInt32(Console.ReadLine());
 
-if (a < b)
+// if (a < b)
+// {
+//     Console.Write($"Максимальное число {b}");
+// }
+// else if (a < c)
+// {
+//     Console.Write($"Максимальное число {c}");
+// }
+// else 
+// {
+//     Console.Write($"Максимальное число {a}");
+// }
+
+// Задача 3
+// Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+Console.Write("Введите значение для проверки на чётность: ");
+int a = Convert.ToInt32(Console.ReadLine());
+int x = a % 2; 
+if (x == 0)
 {
-    Console.Write($"Максимальное число {b}");
+    Console.Write($"Число {a} чётное");
 }
-else if (a < c)
+else
 {
-    Console.Write($"Максимальное число {c}");
-}
-else 
-{
-    Console.Write($"Максимальное число {a}");
+    Console.Write($"Число {a} не чётное");
 }
