@@ -49,44 +49,88 @@
 // Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 
-int lengthArray = 6;
-int widthArray = 4;
+// int lengthArray = 6;
+// int widthArray = 4;
 
-int[,] arrayRandom = new int[lengthArray, widthArray];
+// int[,] arrayRandom = new int[lengthArray, widthArray];
 
-Console.WriteLine("Прямоугольный двумерный массив случайных чисел: ");
-for (int i = 0; i < arrayRandom.GetLength(0); i++)
+// Console.WriteLine("Прямоугольный двумерный массив случайных чисел: ");
+// for (int i = 0; i < arrayRandom.GetLength(0); i++)
+// {
+//     for (int j = 0; j < arrayRandom.GetLength(1); j++)
+//     {
+//         arrayRandom[i, j] = new Random().Next(0, 10);
+//         Console.Write($"{arrayRandom[i, j]} ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int memoryString = 0;
+// int minSumInString = 0;
+
+// for (int i = 0; i < arrayRandom.GetLength(0); i++)
+// {
+//     int sumInString = 0;
+
+//     for (int j = 0; j < arrayRandom.GetLength(1); j++)
+//     {
+//         sumInString += arrayRandom[i, j];
+//     }
+
+//     if (i == 0) 
+//     {
+//         minSumInString = sumInString;
+//     }
+
+//     if (minSumInString > sumInString)
+//     {
+//         minSumInString = sumInString;
+//         memoryString = i;
+//     }
+// }
+// Console.WriteLine($"------------------");
+// Console.WriteLine($"Наименьшая сумма находится в {memoryString + 1} строке");
+
+
+// Задача 3 
+// Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+Random rand = new Random();
+int[,] A = new int[2, 2] { { 2, 4 }, { 3, 2 } };
+int[,] B = new int[2, 2] { { 3, 4 }, { 3, 3 } };
+
+Console.WriteLine("Матрица A:");
+for (int i = 0; i < A.GetLength(0); i++)
 {
-    for (int j = 0; j < arrayRandom.GetLength(1); j++)
+    for (int j = 0; j < A.GetLength(1); j++)
     {
-        arrayRandom[i, j] = new Random().Next(0, 10);
-        Console.Write($"{arrayRandom[i, j]} ");
+        Console.Write(A[i, j] + " ");
     }
     Console.WriteLine();
 }
 
-int memoryString = 0;
-int minSumInString = 0;
-
-for (int i = 0; i < arrayRandom.GetLength(0); i++)
+Console.WriteLine("Матрица B:");
+for (int i = 0; i < B.GetLength(0); i++)
 {
-    int sumInString = 0;
-
-    for (int j = 0; j < arrayRandom.GetLength(1); j++)
+    for (int j = 0; j < B.GetLength(0); j++)
     {
-        sumInString += arrayRandom[i, j];
+        Console.Write(B[i, j] + " ");
     }
-
-    if (i == 0) 
-    {
-        minSumInString = sumInString;
-    }
-
-    if (minSumInString > sumInString)
-    {
-        minSumInString = sumInString;
-        memoryString = i;
-    }
+    Console.WriteLine();
 }
-Console.WriteLine($"------------------");
-Console.WriteLine($"Наименьшая сумма находится в {memoryString + 1} строке");
+
+Console.WriteLine("Результат :");
+
+int[,] C = new int[2, 2];
+for (int i = 0; i < A.GetLength(0); i++)
+{
+    for (int j = 0; j < B.GetLength(1); j++)
+    {
+        for (int k = 0; k < B.GetLength(0); k++)
+        {
+            C[i, j] += A[i, k] * B[k, j];
+        }
+        Console.Write(C[i, j] + " ");
+    }
+    Console.WriteLine();
+}
