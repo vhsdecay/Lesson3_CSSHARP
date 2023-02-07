@@ -95,42 +95,71 @@
 // Задача 3 
 // Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
-Random rand = new Random();
-int[,] A = new int[2, 2] { { 2, 4 }, { 3, 2 } };
-int[,] B = new int[2, 2] { { 3, 4 }, { 3, 3 } };
+// Random rand = new Random();
+// int[,] A = new int[2, 2] { { 2, 4 }, { 3, 2 } };
+// int[,] B = new int[2, 2] { { 3, 4 }, { 3, 3 } };
 
-Console.WriteLine("Матрица A:");
-for (int i = 0; i < A.GetLength(0); i++)
+// Console.WriteLine("Матрица A:");
+// for (int i = 0; i < A.GetLength(0); i++)
+// {
+//     for (int j = 0; j < A.GetLength(1); j++)
+//     {
+//         Console.Write(A[i, j] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Console.WriteLine("Матрица B:");
+// for (int i = 0; i < B.GetLength(0); i++)
+// {
+//     for (int j = 0; j < B.GetLength(0); j++)
+//     {
+//         Console.Write(B[i, j] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Console.WriteLine("Результат :");
+
+// int[,] C = new int[2, 2];
+// for (int i = 0; i < A.GetLength(0); i++)
+// {
+//     for (int j = 0; j < B.GetLength(1); j++)
+//     {
+//         for (int k = 0; k < B.GetLength(0); k++)
+//         {
+//             C[i, j] += A[i, k] * B[k, j];
+//         }
+//         Console.Write(C[i, j] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+
+// Задача 4
+// Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+
+int[,,] arrayRandom = new int[2, 2, 2];
+
+Console.WriteLine("Трёхмерный массив случайных чисел: ");
+for (int i = 0; i < arrayRandom.GetLength(0); i++)
 {
-    for (int j = 0; j < A.GetLength(1); j++)
+    for (int j = 0; j < arrayRandom.GetLength(1); j++)
     {
-        Console.Write(A[i, j] + " ");
-    }
-    Console.WriteLine();
-}
-
-Console.WriteLine("Матрица B:");
-for (int i = 0; i < B.GetLength(0); i++)
-{
-    for (int j = 0; j < B.GetLength(0); j++)
-    {
-        Console.Write(B[i, j] + " ");
-    }
-    Console.WriteLine();
-}
-
-Console.WriteLine("Результат :");
-
-int[,] C = new int[2, 2];
-for (int i = 0; i < A.GetLength(0); i++)
-{
-    for (int j = 0; j < B.GetLength(1); j++)
-    {
-        for (int k = 0; k < B.GetLength(0); k++)
+        for (int k = 0; k < arrayRandom.GetLength(2); k++)
         {
-            C[i, j] += A[i, k] * B[k, j];
+            if (k == 0)
+            {
+                arrayRandom[i, j, k] = new Random().Next(0, 100);
+                Console.Write($"{arrayRandom[i, j, k]}({j},{k},{i}) ");
+            }
+            else
+            {
+                arrayRandom[i, j, k] = new Random().Next(0, 100);
+                Console.Write($" {arrayRandom[i, j, k]}({j},{k},{i})");
+            }
         }
-        Console.Write(C[i, j] + " ");
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }
